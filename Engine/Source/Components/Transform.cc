@@ -18,7 +18,17 @@ Vector3 Transform::getPosition() const
 	return this->position;
 }
 
+void Transform::setRotation(Quaternion rotation)
+{
+	this->rotation = rotation;
+}
+
+Quaternion Transform::getRotation() const
+{
+	return this->rotation;
+}
+
 std::string Transform::toString()
 {
-	return std::format("Transform[{}, {}, {}]", this->position.x, this->position.y, this->position.z);
+	return std::format("Transform[{}, {}]", this->position.toString(), this->rotation.toString());
 }

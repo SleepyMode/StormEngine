@@ -2,12 +2,9 @@
 #pragma once
 
 #include "Core/IEntityComponent.h"
+#include "Math/Quaternion.h"
 #include "Math/Vector3.h"
 
-//
-// This is missing a Quaternion for rotation.
-// Really should get to adding that.
-//
 class Transform : public IEntityComponent
 {
 public:
@@ -16,8 +13,12 @@ public:
 	void setPosition(Vector3 position);
 	Vector3 getPosition() const;
 
+	void setRotation(Quaternion rotation);
+	Quaternion getRotation() const;
+
 	virtual std::string toString() override;
 
 private:
 	Vector3 position;
+	Quaternion rotation;
 };
