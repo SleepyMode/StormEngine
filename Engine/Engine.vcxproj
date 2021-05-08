@@ -163,9 +163,11 @@
     <ClCompile Include="Source\Concurrency\Mutex.cc" />
     <ClCompile Include="Source\Core\Entity.cc" />
     <ClCompile Include="Source\Core\World.cc" />
+    <ClCompile Include="Source\Math\Quaternion.cc" />
     <ClCompile Include="Source\Math\Vector2.cc" />
     <ClCompile Include="Source\Math\Vector3.cc" />
     <ClCompile Include="Source\Math\Vector4.cc" />
+    <ClCompile Include="Source\Native\Boot\SharedEntry.cc" />
     <ClCompile Include="Source\Native\Window\Windows\WindowsWindow.cc" />
     <ClCompile Include="Thirdparty\fmt-7.1.3\src\format.cc" />
     <ClCompile Include="Thirdparty\fmt-7.1.3\src\os.cc" />
@@ -181,9 +183,12 @@
     <ClInclude Include="Include\Core\Platform.h" />
     <ClInclude Include="Include\Concurreny\ScopedMutex.h" />
     <ClInclude Include="Include\Core\World.h" />
+    <ClInclude Include="Include\Math\Quaternion.h" />
     <ClInclude Include="Include\Math\Vector2.h" />
     <ClInclude Include="Include\Math\Vector3.h" />
     <ClInclude Include="Include\Math\Vector4.h" />
+    <ClInclude Include="Include\Native\Boot\SharedEntry.h" />
+    <ClInclude Include="Include\Native\Boot\Windows\WindowsBoot.h" />
     <ClInclude Include="Include\Native\Window\IWindow.h" />
     <ClInclude Include="Include\Native\Window\Windows\WindowsWindow.h" />
     <ClInclude Include="Include\Native\Window\WindowMode.h" />

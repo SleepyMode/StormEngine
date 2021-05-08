@@ -11,6 +11,8 @@
     <ClCompile Include="Source\Core\World.cc" />
     <ClCompile Include="Source\Math\Vector4.cc" />
     <ClCompile Include="Source\Concurrency\Mutex.cc" />
+    <ClCompile Include="Source\Native\Boot\SharedEntry.cc" />
+    <ClCompile Include="Source\Math\Quaternion.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Core\Platform.h" />
@@ -43,5 +45,8 @@
     <ClInclude Include="Include\Concurreny\ScopedMutex.h" />
     <ClInclude Include="Include\Concurreny\Mutex.h" />
     <ClInclude Include="Include\Core\Debug.h" />
+    <ClInclude Include="Include\Native\Boot\SharedEntry.h" />
+    <ClInclude Include="Include\Native\Boot\Windows\WindowsBoot.h" />
+    <ClInclude Include="Include\Math\Quaternion.h" />
   </ItemGroup>
 </Project>
