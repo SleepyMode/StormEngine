@@ -1,0 +1,8 @@
+
+#
+# Storm Engine gitignore file
+# Updated 2021/05/08
+#
+.bin/
+.build/
+.vs/
