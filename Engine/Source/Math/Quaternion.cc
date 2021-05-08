@@ -2,6 +2,7 @@
 #include <cmath>
 #include "Math/Quaternion.h"
 #include "Core/Platform.h"
+#include "Wrappers/Format.h"
 
 Quaternion::Quaternion()
 {
@@ -211,4 +212,9 @@ Vector3 Quaternion::toEulerAngles()
 	}
 
 	UNREACHABLE;
+}
+
+std::string Quaternion::toString()
+{
+	return std::format("Quaternion[{}, {}, {}, {}]", this->x, this->y, this->z, this->w);
 }

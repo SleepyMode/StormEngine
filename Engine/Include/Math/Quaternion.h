@@ -1,9 +1,10 @@
 
 #pragma once
 
+#include "Concept/IStringifyable.h"
 #include "Math/Vector3.h"
 
-class Quaternion
+class Quaternion : public IStringifyable
 {
 public:
 	float x;
@@ -31,4 +32,6 @@ public:
 	Quaternion getConjugated();
 
 	Vector3 toEulerAngles();
+
+	virtual std::string toString();
 };
