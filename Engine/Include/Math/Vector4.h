@@ -26,6 +26,9 @@ public:
 	float min() const;
 	float max() const;
 
+	void	normalize();
+	Vector4	getNormalized();
+
 	void	clamp(float min, float max);
 	Vector4 getClamped(float min, float max) const;
 

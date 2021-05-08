@@ -64,6 +64,28 @@ float Vector4::max() const
 	return std::max(std::max(this->x, this->y), std::max(this->z, this->w));
 }
 
+void Vector4::normalize()
+{
+	float scale = 1.f / this->length();
+	this->x *= scale;
+	this->y *= scale;
+	this->z *= scale;
+	this->w *= scale;
+}
+
+Vector4 Vector4::getNormalized()
+{
+	float scale = 1.f / this->length();
+	Vector4 result(
+		this->x * scale,
+		this->y * scale,
+		this->z * scale,
+		this->w * scale
+	);
+
+	return result;
+}
+
 void Vector4::clamp(float min, float max)
 {
 	this->x = std::clamp(this->x, min, max);

@@ -52,6 +52,26 @@ float Vector3::max() const
 	return std::max(std::max(this->x, this->y), this->z);
 }
 
+void Vector3::normalize()
+{
+	float scale = 1.f / this->length();
+	this->x *= scale;
+	this->y *= scale;
+	this->z *= scale;
+}
+
+Vector3 Vector3::getNormalized()
+{
+	float scale = 1.f / this->length();
+	Vector3 result(
+		this->x * scale,
+		this->y * scale,
+		this->z * scale
+	);
+
+	return result;
+}
+
 float Vector3::dot(const Vector3& other)
 {
 	return std::sqrt((this->x * other.x) + (this->y * other.y) + (this->z * other.z));

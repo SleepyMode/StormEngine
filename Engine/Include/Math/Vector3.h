@@ -21,6 +21,9 @@ public:
 	float min() const;
 	float max() const;
 
+	void	normalize();
+	Vector3	getNormalized();
+
 	float dot(const Vector3& other);
 	Vector3& cross(const Vector3& other);
 

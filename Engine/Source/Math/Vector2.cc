@@ -42,6 +42,24 @@ float Vector2::max() const
 	return std::max(this->x, this->y);
 }
 
+void Vector2::normalize()
+{
+	float scale = 1.f / this->length();
+	this->x *= scale;
+	this->y *= scale;
+}
+
+Vector2 Vector2::getNormalized()
+{
+	float scale = 1.f / this->length();
+	Vector2 result(
+		this->x * scale,
+		this->y * scale
+	);
+
+	return result;
+}
+
 void Vector2::clamp(float min, float max)
 {
 	this->x = std::clamp(this->x, min, max);
