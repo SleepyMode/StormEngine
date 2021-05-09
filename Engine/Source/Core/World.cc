@@ -2,7 +2,7 @@
 #include "Core/World.h"
 #include <stdexcept>
 
-Entity* World::CreateEntity()
+Entity* World::createEntity()
 {
 	std::uint64_t entityId = this->entityList.size();
 	Entity* entity = new Entity(entityId, this);
@@ -12,17 +12,17 @@ Entity* World::CreateEntity()
 	return entity;
 }
 
-Entity* World::GetEntity(std::uint64_t entityId)
+Entity* World::getEntity(std::uint64_t entityId)
 {
 	return this->entityList.at(entityId);
 }
 
-std::vector<Entity*>& World::GetEntities()
+std::vector<Entity*>& World::getEntities()
 {
 	return this->entityList;
 }
 
-void World::RemoveEntity(std::uint64_t entityId)
+void World::removeEntity(std::uint64_t entityId)
 {
 	try
 	{

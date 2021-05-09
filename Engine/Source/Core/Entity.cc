@@ -23,28 +23,28 @@ std::string Entity::toString()
 	return std::format("Entity[{}]", this->entityId);
 }
 
-World* Entity::GetWorld()
+World* Entity::getWorld()
 {
 	return this->world;
 }
 
-std::uint64_t Entity::GetEntityId()
+std::uint64_t Entity::getEntityId()
 {
 	return this->entityId;
 }
 
-std::vector<IEntityComponent*> Entity::GetComponents()
+std::vector<IEntityComponent*> Entity::getComponents()
 {
 	return this->components;
 }
 
-void Entity::Remove()
+void Entity::remove()
 {
 	//
 	// Fun fact, at one point this used to be a "clear and suicide" function.
-	// It would call GetEntities, set its own pointer to nullptr and then proceed
+	// It would call getEntities, set its own pointer to nullptr and then proceed
 	// to call "delete this". Luckily, there's better alternatives. :)
 	// Just goes to prove how incompetent of a programmer I am.
 	//
-	this->world->RemoveEntity(this->entityId);
+	this->world->removeEntity(this->entityId);
 }
