@@ -1,26 +1,30 @@
 
 #include "Wrappers/Format.h"
+#include "Core/LogSystem.h"
 #include "Core/Debug.h"
 
 void Debug::logInfo(std::string text)
 {
 	//
-	// TODO: Connect to some Log class.
+	// TODO: Improve on this. This feels kind of lame
 	//
+	LogSystem::write("[INFO] " + text);
 }
 
 void Debug::logWarning(std::string text)
 {
 	//
-	// TODO: Connect to some Log class.
+	// TODO: Improve on this. This feels kind of lame
 	//
+	LogSystem::write("[WARN] " + text);
 }
 
 void Debug::logError(std::string text)
 {
 	//
-	// TODO: Connect to some Log class.
+	// TODO: Improve on this. This feels kind of lame
 	//
+	LogSystem::write("[ERROR] " + text);
 }
 
 void Debug::onAssertionFailed(const char* eval, const char* file, unsigned int line, bool fatal)
