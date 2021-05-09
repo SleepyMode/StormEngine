@@ -13,7 +13,7 @@
 
 #pragma comment(lib, "Engine.lib")
 
-#define QUICK_TEST(name, id, eval) std::printf("[%c] "##name##" "##id##": %s\n", (eval) ? "+" : "-", (eval) ? "SUCCESS" : "FAILED")
+#define QUICK_TEST(name, id, eval) std::printf("[%c] "##name##" "##id##": %s\n", (eval) ? '+' : '-', (eval) ? "SUCCESS" : "FAILED")
 
 int main(int argc, char* argv[])
 {
