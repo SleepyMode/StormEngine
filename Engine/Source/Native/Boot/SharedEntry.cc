@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	UNREFERENCED_PARAMETER(argv);
 
 #if SE_OS_WINDOWS
-	StormEngine::BootWindows();
+	StormEngine::bootWindows();
 #endif
 
 	return 0;
