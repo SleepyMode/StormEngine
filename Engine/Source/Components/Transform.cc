@@ -1,4 +1,3 @@
-#include "Core/Debug.h"
 
 #include "Wrappers/Format.h"
 #include "Components/Transform.h"
