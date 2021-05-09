@@ -33,7 +33,7 @@ public:
 	std::uint64_t getEntityId();
 	std::vector<IEntityComponent*> getComponents();
 
-	void Remove();
+	void remove();
 
 private:
 	World* world;
