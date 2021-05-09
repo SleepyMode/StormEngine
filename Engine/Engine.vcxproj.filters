@@ -13,6 +13,7 @@
     <ClCompile Include="Source\Concurrency\Mutex.cc" />
     <ClCompile Include="Source\Native\Boot\SharedEntry.cc" />
     <ClCompile Include="Source\Math\Quaternion.cc" />
+    <ClCompile Include="Source\Native\Boot\Windows\WindowsBoot.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Core\Platform.h" />
