@@ -62,18 +62,18 @@ inline bool Entity::addComponent(bool allowDuplicates)
 			return false;
 	}
 
-	components.push_back(reinterpret_cast<IEntityComponent*>(new T()));
+	this->components.push_back(reinterpret_cast<IEntityComponent*>(new T()));
 	return true;
 }
 
 template <typename T>
 inline void Entity::removeComponent()
 {
-	for (auto it = components.begin(); it != components.end(); ++it)
+	for (auto it = this->components.begin(); it != this->components.end(); ++it)
 	{
 		if (dynamic_cast<T*>(*it))
 		{
-			components.erase(it);
+			this->components.erase(it);
 			break;
 		}
 	}
@@ -82,7 +82,7 @@ inline void Entity::removeComponent()
 template<typename T>
 inline T* Entity::getComponent()
 {
-	for (auto component : components)
+	for (auto component : this->components)
 	{
 		T* castComponent = dynamic_cast<T*>(component);
 		if (castComponent != nullptr)
