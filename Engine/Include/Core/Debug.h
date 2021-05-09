@@ -45,12 +45,9 @@ __declspec(noreturn) void __se_fastfail_(int code)
 
 class Debug
 {
-private:
-	FORCEINLINE Debug()
-	{
-	}
-
 public:
+	Debug() = delete;
+
 	static void logInfo(std::string text);
 	static void logWarning(std::string text);
 	static void logError(std::string text);
