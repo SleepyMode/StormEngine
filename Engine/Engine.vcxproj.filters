@@ -14,6 +14,8 @@
     <ClCompile Include="Source\Native\Boot\SharedEntry.cc" />
     <ClCompile Include="Source\Math\Quaternion.cc" />
     <ClCompile Include="Source\Native\Boot\Windows\WindowsBoot.cc" />
+    <ClCompile Include="Source\Core\Debug.cc" />
+    <ClCompile Include="Source\Core\LogSystem.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Core\Platform.h" />
@@ -49,5 +51,7 @@
     <ClInclude Include="Include\Native\Boot\SharedEntry.h" />
     <ClInclude Include="Include\Native\Boot\Windows\WindowsBoot.h" />
     <ClInclude Include="Include\Math\Quaternion.h" />
+    <ClInclude Include="Include\Core\LogSystem.h" />
+    <ClInclude Include="Include\Core\ILogListener.h" />
   </ItemGroup>
 </Project>

@@ -162,6 +162,8 @@
     <ClCompile Include="Source\Components\Transform.cc" />
     <ClCompile Include="Source\Concurrency\Mutex.cc" />
     <ClCompile Include="Source\Core\Entity.cc" />
+    <ClCompile Include="Source\Core\Debug.cc" />
+    <ClCompile Include="Source\Core\LogSystem.cc" />
     <ClCompile Include="Source\Core\World.cc" />
     <ClCompile Include="Source\Math\Quaternion.cc" />
     <ClCompile Include="Source\Math\Vector2.cc" />
@@ -181,6 +183,8 @@
     <ClInclude Include="Include\Core\Debug.h" />
     <ClInclude Include="Include\Core\Entity.h" />
     <ClInclude Include="Include\Core\IEntityComponent.h" />
+    <ClInclude Include="Include\Core\ILogListener.h" />
+    <ClInclude Include="Include\Core\LogSystem.h" />
     <ClInclude Include="Include\Core\Platform.h" />
     <ClInclude Include="Include\Concurreny\ScopedMutex.h" />
     <ClInclude Include="Include\Core\World.h" />
