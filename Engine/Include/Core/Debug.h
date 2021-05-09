@@ -2,6 +2,7 @@
 #pragma once
 
 #include <cstdio>
+#include <string>
 #include "Core/Platform.h"
 
 //
@@ -42,29 +43,22 @@ __declspec(noreturn) void __se_fastfail_(int code)
 #	endif
 #endif
 
-namespace StormEngine
+class Debug
 {
-	FORCEINLINE void onAssertionFailed(const char* eval, const char* file, unsigned int line, bool fatal)
+private:
+	FORCEINLINE Debug()
 	{
-		//
-		// TODO: Spew text
-		//
-
-
-		//
-		// Just switch this to zero if you get spammed with debugbreaks
-		// while debugging. Thanks to Valve for the idea, lol.
-		//
-		static constexpr bool shouldBreak = true;
-		if (shouldBreak)
-			DEBUG_BREAK();
-
-		if (fatal)
-			SE_FASTFAIL(0x500);
 	}
-}
 
-#define SE_ASSERT(eval) if (!!(eval)) { StormEngine::onAssertionFailed(#eval, __FILE__, __LINE__, false); } enum{}
-#define SE_ASSERT_FATAL(eval) if (!!(eval)) { StormEngine::onAssertionFailed(#eval, __FILE__, __LINE__, true); } enum{}
+public:
+	static void logInfo(std::string text);
+	static void logWarning(std::string text);
+	static void logError(std::string text);
+
+	static void onAssertionFailed(const char* eval, const char* file, unsigned int line, bool fatal);
+};
+
+#define SE_ASSERT(eval) if (!!(eval)) { Debug::onAssertionFailed(#eval, __FILE__, __LINE__, false); } enum{}
+#define SE_ASSERT_FATAL(eval) if (!!(eval)) { Debug::onAssertionFailed(#eval, __FILE__, __LINE__, true); } enum{}
 #define Assert(eval) SE_ASSERT(eval)
 #define AssertFatal(eval) SE_ASSERT_FATAL(eval)
