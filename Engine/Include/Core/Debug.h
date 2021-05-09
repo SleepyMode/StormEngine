@@ -37,10 +37,10 @@ __declspec(noreturn) void __se_fastfail_(int code)
 	asm volatile ("int $0x29" :: "c"(code) : "memory");
 }
 #		define SE_FASTFAIL(code) __se_fastfail_(code)
-#	else
-#		include <cstdlib>
-#		define SE_FASTFAIL(code) abort()
 #	endif
+#else
+#	include <cstdlib>
+#	define SE_FASTFAIL(code) abort()
 #endif
 
 class Debug
