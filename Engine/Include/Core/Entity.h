@@ -18,20 +18,20 @@ public:
 	virtual std::string toString() override;
 
 	template <typename T>
-	inline bool HasComponent();
+	inline bool hasComponent();
 
 	template <typename T>
-	inline bool AddComponent(bool allowDuplicates = false);
+	inline bool addComponent(bool allowDuplicates = false);
 
 	template <typename T>
-	inline void RemoveComponent();
+	inline void removeComponent();
 
 	template <typename T>
-	inline T* GetComponent();
+	inline T* getComponent();
 
-	World* GetWorld();
-	std::uint64_t GetEntityId();
-	std::vector<IEntityComponent*> GetComponents();
+	World* getWorld();
+	std::uint64_t getEntityId();
+	std::vector<IEntityComponent*> getComponents();
 
 	void Remove();
 
@@ -42,7 +42,7 @@ private:
 };
 
 template<typename T>
-inline bool Entity::HasComponent()
+inline bool Entity::hasComponent()
 {
 	for (auto component : components)
 	{
@@ -54,11 +54,11 @@ inline bool Entity::HasComponent()
 }
 
 template<typename T>
-inline bool Entity::AddComponent(bool allowDuplicates)
+inline bool Entity::addComponent(bool allowDuplicates)
 {
 	if (!allowDuplicates)
 	{
-		if (this->HasComponent<T>())
+		if (this->hasComponent<T>())
 			return false;
 	}
 
@@ -67,7 +67,7 @@ inline bool Entity::AddComponent(bool allowDuplicates)
 }
 
 template <typename T>
-inline void Entity::RemoveComponent()
+inline void Entity::removeComponent()
 {
 	for (auto it = components.begin(); it != components.end(); ++it)
 	{
@@ -80,7 +80,7 @@ inline void Entity::RemoveComponent()
 }
 
 template<typename T>
-inline T* Entity::GetComponent()
+inline T* Entity::getComponent()
 {
 	for (auto component : components)
 	{
