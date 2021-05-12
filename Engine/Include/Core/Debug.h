@@ -59,3 +59,11 @@ public:
 #define SE_ASSERT_FATAL(eval) if (!!(eval)) { Debug::onAssertionFailed(#eval, __FILE__, __LINE__, true); } enum{}
 #define Assert(eval) SE_ASSERT(eval)
 #define AssertFatal(eval) SE_ASSERT_FATAL(eval)
+
+#if SE_BUILD_DEBUG
+#	define AssertDebug(eval) SE_ASSERT(eval)
+#	define AssertFatalDebug(eval) SE_ASSERT_FATAL(eval)
+#else
+#	define AssertDebug(eval)
+#	define AssertFatalDebug(eval)
+#endif
