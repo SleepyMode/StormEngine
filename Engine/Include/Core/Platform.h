@@ -38,18 +38,33 @@
 #	define SE_FORCEINLINE					__forceinline
 #	define SE_UNREACHABLE					__assume(0)
 #	define SE_UNREFERENCED_PARAMETER(x)		(x)
+#	define SE_POP_WARNING()					__pragma(warning(pop))
+#	define SE_PUSH_WARNING()				__pragma(warning(push))
+#	define SE_ENABLE_WARNING(code)			__pragma(warning(enable: code))
+#	define SE_DISABLE_WARNING(code)			__pragma(warning(disable: code))
+#	define SE_SUPPRESS_WARNING(code)		__pragma(warning(suppress: code))
 #elif SE_COMPILER_GCC
 #	define SE_NOVTABLE						
 #	define SE_INTERFACE						class
 #	define SE_FORCEINLINE					__attribute__((always_inline))
 #	define SE_UNREACHABLE					__builtin_unreachable()
 #	define SE_UNREFERENCED_PARAMETER(x)		(x)
+#	define SE_POP_WARNING()					_Pragma("GCC diagnostic pop")
+#	define SE_PUSH_WARNING()				_Pragma("GCC diagnostic push")
+#	define SE_ENABLE_WARNING(code)
+#	define SE_DISABLE_WARNING(code)
+#	define SE_SUPPRESS_WARNING(code)
 #else
 #	define SE_NOVTABLE
 #	define SE_INTERFACE
 #	define SE_FORCEINLINE					inline
 #	define SE_UNREACHABLE
 #	define SE_UNREFERENCED_PARAMETER(x)		(x)
+#	define SE_POP_WARNING()
+#	define SE_PUSH_WARNING()
+#	define SE_ENABLE_WARNING(code)
+#	define SE_DISABLE_WARNING(code)
+#	define SE_SUPPRESS_WARNING(code)
 #endif
 
 #if !defined(NOVTABLE)
